@@ -1,4 +1,6 @@
 # 1.0 LEARNING ANGULAR!
 
-## FRONTEND -> ANGULAR 
-## BACKEND -> ANGULAR
+### FRONTEND -> Angular
+### BACKEND -> Laravel
+### PACKAGES -> {
+}
