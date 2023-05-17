@@ -1,0 +1,20 @@
+
+
+          <td [routerLink]="['/users', user?.id]">{{user?.name}}</td>
+          <td [routerLink]="['/users', user?.id]">{{user?.lastname}}</td>
+          <td [routerLink]="['/users', user?.id]">{{user?.fiscalcode}}</td>
+          <td [routerLink]="['/users', user?.id]">{{user?.email}}</td>
+          <td [routerLink]="['/users', user?.id]">{{user?.phone}}</td>
+          <td [routerLink]="['/users', user?.id]">{{user?.province}}</td>
+          <td [routerLink]="['/users', user?.id]">{{user?.age}}</td>
+
+          <td class="btn-group p-2">
+            <button class="btn btn-modify" (click)="updateUser()">
+              Modify
+            </button>
+
+            <!-- THIS BUTTON IS ACTIVATING THE EVENT INITIALIZED INTO user.component.ts/:19 -->
+            <button class="btn btn-del" (click)="deleteUser()">
+              Delete
+            </button>
+          </td>

@@ -1,0 +1,62 @@
+<h1 class="text-center underline underline-offset-8 m-10 text-4xl "> Sign Up </h1>
+
+
+<form name="signupform" #f="ngForm" (ngSubmit)="signUp(f)">
+
+
+      <div class="my-7">
+        <div class="input-group">
+          <input ngModel type="text" name="name" id="name" required minlength="3" #name="ngModel">
+          <label for="name">Name</label>
+        </div>
+        <div class="text-red-950 bg-red-200 font-bold p-2" *ngIf="name.invalid && (name.touched && name.dirty)">
+          <div *ngIf="name.invalid && (name.touched && name.dirty)">
+            <p *ngIf="name.errors?.['required']">Name is required</p>
+            <p *ngIf="name.errors?.['minlength']">3 chars required</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="my-7">
+        <div class="input-group">
+          <input ngModel type="text" name="email" id="email" required email #email="ngModel">
+          <label for="email">Email</label>
+        </div>
+        <div class="text-red-950 bg-red-200 font-bold p-2" *ngIf="email.invalid && (email.touched && email.dirty)">
+          <div *ngIf="email.invalid && (email.touched && email.dirty)">
+            <p *ngIf="email.errors?.['required']">Email is required</p>
+            <p *ngIf="email.errors?.['email']">Not a valid email</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="my-7">
+        <div class="input-group">
+          <input ngModel type="text" name="password" id="password" #pwd="ngModel">
+          <label for="password">Password</label>
+        </div>
+        <div class="text-red-950 bg-red-200 font-bold p-2" *ngIf="email.invalid && (email.touched && email.dirty)">
+          <div *ngIf="pwd.invalid && (pwd.touched && pwd.dirty)">
+            <p *ngIf="pwd.errors?.['required']">Email is required</p>
+            <p *ngIf="pwd.errors?.['minlength']">3 chars required</p>
+        </div>
+        </div>
+      </div>
+
+      <div class="my-7">
+        <div class="input-group">
+          <input type="text" name="password_confirmation" id="password_confirmation">
+          <label for="email">Password Confirmation</label>
+        </div>
+      </div>
+
+
+
+  <div class="input-group">
+    <button
+        type="submit"
+        class="p-1 my-6 w-2/3 mx-auto border border-teal-500 hover:bg-teal-500 hover:text-slate-900 font-bold">
+        Sign Up
+    </button>
+  </div>
+</form>

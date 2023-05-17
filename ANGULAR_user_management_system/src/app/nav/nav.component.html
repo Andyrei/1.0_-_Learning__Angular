@@ -1,0 +1,36 @@
+<div class="navbar bg-base-100 container mx-auto">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <label tabindex="0" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      </label>
+      <ul *ngIf="isUserLoggedIn" tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+        <li><a>Users</a></li>
+      </ul>
+    </div>
+    <a class="btn btn-ghost normal-case text-xl" routerLink="/">USM</a>
+
+    {{ username }}
+
+
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul *ngIf="isUserLoggedIn" class="menu menu-horizontal px-1">
+      <li><a routerLink="/users" >Users</a></li>
+    </ul>
+  </div>
+
+  <div class="navbar-end gap-8">
+    <a (click)="signIn($event)" *ngIf="!isUserLoggedIn" class="btn bg-transparent border border-lime-400 text-lime-50 hover:bg-lime-400 hover:text-slate-800 font-bold rounded-xl active:bg-lime-300">Sign In</a>
+    <a (click)="signUp($event)" *ngIf="!isUserLoggedIn" class="btn bg-lime-400 hover:bg-lime-600 text-slate-900 font-bold rounded-xl active:bg-lime-300">Sign Up</a>
+
+
+    <a (click)="logOut($event)" *ngIf="isUserLoggedIn" class="btn bg-lime-400 hover:bg-lime-600 text-slate-900 font-bold rounded-xl active:bg-lime-300">Sign Out </a>
+<!--     <a
+      class="btn bg-lime-400 hover:bg-lime-600 text-slate-900 font-bold rounded-xl active:bg-lime-300"
+      routerLink="/users/new">
+      Create new user
+    </a> -->
+  </div>
+
+</div>

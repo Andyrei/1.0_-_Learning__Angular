@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* DARK MODE */
+
+:root{
+  @apply bg-slate-800 text-slate-300 font-mono
+}
+
+
+.btn-group{
+ @apply flex gap-2
+}
+.btn {
+  @apply px-3 py-1 border font-bold transition-colors
+}
+.btn-del {
+  @apply border-red-900 hover:bg-red-900 active:bg-red-700
+}
+.btn-modify{
+  @apply border-yellow-500 bg-yellow-500 text-slate-700 hover:bg-yellow-300 active:bg-yellow-100
+}
+
+.input-group{
+  @apply flex flex-col-reverse
+}
+.input-group input{
+  @apply bg-transparent border p-1 mt-1 text-slate-400 pl-2 min-w-[20rem]
+}

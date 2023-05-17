@@ -1,0 +1,55 @@
+<form #f="ngForm">
+  <input type="hidden" name="id" [(ngModel)]="user.id">
+
+  <div class="flex flex-wrap gap-5">
+    <div class="input-group">
+        <div class="text-red-600 text-xl" *ngIf="firstName.errors && (firstName.dirty || firstName.touched)">
+            <p *ngIf="firstName.errors?.['required']">This field is required</p>
+            <p *ngIf="firstName.errors?.['minlength']">Name must be at least 3 characters long</p>
+            <p *ngIf="firstName.errors?.['pattern']">Is not appropriate</p>
+        </div>
+        <input type="text" name="firstname" id="firstname" [(ngModel)]="user.name" minlength="3" required pattern="[a-zA-Z]" #firstName="ngModel">
+        <label for="firstname">First name</label>
+    </div>
+    <div class="input-group">
+      <input type="text" name="lastname" id="lastname" [(ngModel)]="user.lastname">
+      <label for="lastname">Last name</label>
+    </div>
+  </div>
+  <div class="flex flex-wrap gap-5">
+    <div class="input-group">
+      <input type="text" name="email" id="email" [(ngModel)]="user.email">
+      <label for="email">Email</label>
+    </div>
+    <div class="input-group">
+      <input type="text" name="phone" id="phone" [(ngModel)]="user.phone">
+      <label for="phone">Phone</label>
+    </div>
+  </div>
+  <div class="input-group">
+    <input type="text" name="province" id="province" [(ngModel)]="user.province">
+    <label for="province">Province</label>
+  </div>
+  <div class="flex flex-wrap gap-5">
+    <div class="input-group">
+      <input type="text" name="fiscalcode" id="fiscalcode" [(ngModel)]="user.fiscalcode">
+      <label for="fiscalcode">Fiscalcode</label>
+    </div>
+    <div class="input-group">
+      <input type="number" name="age" id="age" [(ngModel)]="user.age">
+      <label for="age">Age</label>
+    </div>
+  </div>
+  <div class="input-group">
+    <button
+        (click)="saveUser()"
+        class="p-1 my-6 w-2/3 mx-auto border border-teal-500 hover:bg-teal-500 hover:text-slate-900 font-bold">
+        Save
+    </button>
+    <button
+        (click)="resetUser(f.form)"
+        class="p-1 my-6 w-2/3 mx-auto border border-red-500 hover:bg-red-500 hover:text-slate-400 font-bold">
+        Reset
+    </button>
+  </div>
+</form>

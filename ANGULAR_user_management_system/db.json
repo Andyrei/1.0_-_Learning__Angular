@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Andy",
+      "lastname": "Drei",
+      "email": "nd@gmail.com",
+      "fiscalcode": "NDRI2u382SAK2992Sasdasd",
+      "province": "Torino",
+      "phone": "454545455",
+      "age": 26
+    },
+    {
+      "id": 2,
+      "name": "Some",
+      "lastname": "User",
+      "email": "some@gmail.com",
+      "fiscalcode": "RSAHRN72M22Z444S",
+      "province": "Torino",
+      "phone": "454545455",
+      "age": 20
+    },
+    {
+      "id": 3,
+      "name": "User",
+      "lastname": "Number",
+      "email": "Number@gmail.com",
+      "fiscalcode": "RSAHRN72M22Z444S",
+      "province": "Torino",
+      "phone": "454545455",
+      "age": 31
+    },
+    {
+      "id": 4,
+      "name": "Hidran4",
+      "lastname": "Arias",
+      "email": "hidran@gmail.com",
+      "fiscalcode": "RSAHRN72M22Z444S",
+      "province": "Torino",
+      "phone": "454545455",
+      "age": 17
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+<h1 class="text-center underline underline-offset-8 m-10 text-4xl "> Log in </h1>
+
+<form name="loginForm" #f="ngForm" (ngSubmit)="signIn(f)">
+  <div class="flex flex-wrap gap-5">
+    <div class="input-group">
+        <input type="text" ngModel placeholder="Email" name="email" id="email" required email #email="ngModel">
+        <label for="email">Email</label>
+    </div>
+    <div class="input-group">
+      <input type="text" ngModel placeholder="Password" name="pwd" id="pwd" #pwd="ngModel" minlength="8" required>
+      <label for="pwd">Password</label>
+    </div>
+
+
+
+    <!-- ERRRORS -->
+    <div class="text-red-950 bg-red-200 font-bold p-2" *ngIf="(email.invalid && (email.touched && email.dirty))|| (pwd.invalid && (pwd.touched && pwd.dirty))">
+        <div *ngIf="email.invalid && (email.touched && email.dirty)">
+          <p *ngIf="email.errors?.['required']">Email is required</p>
+          <p *ngIf="email.errors?.['email']">Not a valid email</p>
+        </div>
+        <div *ngIf="pwd.invalid && (pwd.touched && pwd.dirty)">
+          <p *ngIf="pwd.errors?.['required']">Email is required</p>
+          <p *ngIf="pwd.errors?.['minlength']">Email should be at least {{email.errors?.['minlength'].requiredLength}} characters</p>
+        </div>
+    </div>
+  </div>
+    <div class="input-group">
+      <button type="submit" [disabled]="!f.valid"
+          class="p-1 my-6 w-2/3 mx-auto border border-teal-500 hover:bg-teal-500 disabled:opacity-30 disabled:hover:bg-inherit disabled:hover:text-current disabled:hover:border-red-500 hover:text-slate-900 font-bold">
+          Log In
+      </button>
+    </div>
+
+</form>
